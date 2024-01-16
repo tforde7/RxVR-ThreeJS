@@ -1,31 +1,31 @@
-# # Node.js
-# node_modules/
+# Node.js
+node_modules/
 
-# # Dependency directory
-# yarn-error.log
+# Dependency directory
+yarn-error.log
 
-# # Build artifacts
-# dist/
+# Build artifacts
+dist/
 
-# # Cache
-# .cache/
+# Cache
+.cache/
 
-# # Editor directories and files
-# .vscode/
-# .idea/
+# Editor directories and files
+.vscode/
+.idea/
 
-# # Output of 'npm run build'
-# build/
+# Output of 'npm run build'
+build/
 
-# # Environment variables
-# .env.local
-# .env.development.local
-# .env.test.local
-# .env.production.local
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# # Logs
-# *.log
+# Logs
+*.log
 
-# # OS generated files
-# .DS_Store
-# Thumbs.db
+# OS generated files
+.DS_Store
+Thumbs.db
