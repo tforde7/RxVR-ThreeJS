@@ -2,7 +2,7 @@ import Experience from "../Experience";
 import BrickWall from "./BrickWall";
 import Environment from "./Environment";
 import Floor from "./Floor";
-import Fox from "./Fox";
+// import Fox from "./Fox";
 import FrontDoor from "./FrontDoor";
 import GlassWall from "./GlassWall";
 
@@ -17,7 +17,7 @@ export default class World {
         this.resources.on('ready', () => {
             // Setup
             this.floor = new Floor()
-            this.fox = new Fox()
+            // this.fox = new Fox()
             
             this.brickWall = new BrickWall()
             this.glassWall = new GlassWall()
