@@ -1,6 +1,7 @@
 import EventEmitter from "./EventEmitter";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 
 export default class Resources extends EventEmitter {
     constructor(sources) {
@@ -25,6 +26,7 @@ export default class Resources extends EventEmitter {
         this.loaders.gltfLoader = new GLTFLoader()
         this.loaders.textureLoader = new THREE.TextureLoader()
         this.loaders.cubeTextureLoader = new THREE.CubeTextureLoader()
+        this.loaders.fbxLoader = new FBXLoader()
     }
 
     startLoading() {
@@ -55,6 +57,14 @@ export default class Resources extends EventEmitter {
                         source.path,
                         (cubeTexture) => {
                             this.sourceLoaded(source, cubeTexture)
+                        }
+                    )
+                    break
+                case "fbxModel":
+                    this.loaders.fbxLoader.load(
+                        source.path,
+                        (fbx) => {
+                            this.sourceLoaded(source, fbx)
                         }
                     )
                     break
