@@ -16,6 +16,7 @@ export default class Environment {
 
         this.setSunlight()
         this.setEnvironmentMap()
+        this.setRectAreaLight()
     }
 
     setSunlight() {
@@ -86,5 +87,36 @@ export default class Environment {
         }
 
         
+    }
+
+    setRectAreaLight() {
+        this.rectAreaLight = new THREE.RectAreaLight(0x0000ff, 20, 5, 7)
+        this.rectAreaLight.position.set(0, 0, -10)
+        this.rectAreaLight.lookAt(0, 2, 0)
+        this.scene.add(this.rectAreaLight)
+
+        // Debug
+        if (this.debug.active) {
+            this.debugFolder.add(this.rectAreaLight, 'intensity')
+                .step(0.001)
+                .min(0)
+                .max(10)
+                .name('rectAreaLightIntensity')
+            this.debugFolder.add(this.rectAreaLight.position, 'x')
+                .step(0.001)
+                .min(-10)
+                .max(10)
+                .name('position.x')
+            this.debugFolder.add(this.rectAreaLight.position, 'y')
+                .step(0.001)
+                .min(-10)
+                .max(10)
+                .name('position.y')
+            this.debugFolder.add(this.rectAreaLight.position, 'z')
+                .step(0.001)
+                .min(-10)
+                .max(10)
+                .name('position.z')
+        }
     }
 }
