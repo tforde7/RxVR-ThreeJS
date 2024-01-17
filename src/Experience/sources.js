@@ -46,6 +46,11 @@ export default [
         name: 'glassNormalTexture',
         type: 'texture',
         path: 'textures/glass/normal.jpg'
+    },
+    {
+        name: 'frontDoorModel',
+        type: 'fbxModel',
+        path: 'models/FrontDoor/FrontDoor.fbx'
     }
   
 
