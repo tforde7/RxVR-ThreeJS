@@ -24,7 +24,6 @@ export default class FrontDoor {
     }
 
     setModel() {
-        console.log(this.resource)
         this.model = this.resource
         this.model.scale.set(0.04, 0.04, 0.04)
         this.model.position.z = -9.7
