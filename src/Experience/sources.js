@@ -26,6 +26,26 @@ export default [
         name: 'foxModel',
         type: 'gltfModel',
         path: 'models/Fox/glTF/Fox.gltf'
+    },
+    {
+        name: 'brickColorTexture',
+        type: 'texture',
+        path: 'textures/bricks/color.jpg'
+    },
+    {
+        name: 'brickNormalTexture',
+        type: 'texture',
+        path: 'textures/bricks/normal.jpg'
+    },
+    {
+        name: 'glassColorTexture',
+        type: 'texture',
+        path: 'textures/glass/color.jpg'
+    },
+    {
+        name: 'glassNormalTexture',
+        type: 'texture',
+        path: 'textures/glass/normal.jpg'
     }
   
 
