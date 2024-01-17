@@ -53,7 +53,7 @@ export default [
         path: 'models/FrontDoor/FrontDoor.fbx'
     },
     {
-        name: tourGuideModel,
+        name: 'tourGuideModel',
         type: 'gltfModel',
         path: 'models/TourGuide/TourGuide.gltf'
     }

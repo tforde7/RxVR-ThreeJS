@@ -5,6 +5,7 @@ import Floor from "./Floor";
 // import Fox from "./Fox";
 import FrontDoor from "./FrontDoor";
 import GlassWall from "./GlassWall";
+import TourGuide from "./TourGuide";
 
 export default class World {
 
@@ -22,6 +23,7 @@ export default class World {
             this.brickWall = new BrickWall()
             this.glassWall = new GlassWall()
             this.frontDoor = new FrontDoor()
+            this.tourGuide = new TourGuide()
             this.environment = new Environment()
 
 

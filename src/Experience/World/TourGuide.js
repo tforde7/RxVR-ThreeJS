@@ -1,0 +1,110 @@
+import Experience from "../Experience"
+import * as THREE from "three";
+
+
+export default class TourGuide {
+    constructor() {
+        this.experience = new Experience
+        this.scene = this.experience.scene
+        this.resources = this.experience.resources
+        this.time = this.experience.time
+        this.debug = this.experience.debug
+
+        // Debug
+        if (this.debug.active) {
+            this.debugFolder = this.debug.gui.addFolder('TourGuide')
+        }
+
+        // Setup
+        this.resource = this.resources.items.tourGuideModel
+
+        this.setModel()
+        // this.setAnimation()
+        this.setDebug()
+
+
+    }
+
+    setModel() {
+        // console.log(this.resource)
+        this.model = this.resource.scene
+        this.model.scale.set(3, 3, 3)
+        this.model.position.z = 0
+        this.model.position.y = 0
+        this.model.position.x = 10
+
+        this.scene.add(this.model)
+
+        this.model.traverse((child) => {
+            if (child instanceof THREE.Mesh ) {
+                child.castShadow = true
+            }
+        })
+    }
+
+    // setAnimation() {
+    //     this.animation = {}
+    //     this.animation.mixer = new THREE.AnimationMixer(this.model)
+    //     this.animation.actions = {}
+    //     this.animation.actions.idle = this.animation.mixer.clipAction(this.resource.animations[0])
+    //     this.animation.actions.walking = this.animation.mixer.clipAction(this.resource.animations[1])
+    //     this.animation.actions.running = this.animation.mixer.clipAction(this.resource.animations[2])
+        
+    //     this.animation.actions.current = this.animation.actions.idle
+    //     this.animation.actions.current.play()
+
+    //     this.animation.play = (name) => {
+    //         const newAction = this.animation.actions[name].play()
+    //         const oldAction = this.animation.actions.current
+
+    //         newAction.reset()  
+    //         newAction.play()
+    //         newAction.crossFadeFrom(oldAction, 1) 
+
+    //         this.animation.actions.current = newAction
+    //     }
+
+    //     // Debug
+    //     if (this.debug.active) {
+    //         const debugObject = {
+    //             playIdle: () => {this.animation.play('idle')},
+    //             playWalking: () => {this.animation.play('walking')},
+    //             playRunning: () => {this.animation.play('running')},
+    //         }
+    //         this.debugFolder.add(debugObject, 'playIdle')
+    //         this.debugFolder.add(debugObject, 'playWalking')
+    //         this.debugFolder.add(debugObject, 'playRunning')
+    //     }
+    // }
+
+    // update() {
+    //     this.animation.mixer.update(this.time.delta * 0.001)
+    // }
+
+    setDebug() {
+        if (this.debug.active) {
+            this.debugFolder.add(this.model.position, 'x')
+                .step(0.001)
+                .name('position.x')
+                .min(-10)
+                .max(10)
+            this.debugFolder.add(this.model.position, 'y')
+                .step(0.001)
+                .name('position.y')
+                .min(-10)
+                .max(10)
+            this.debugFolder.add(this.model.position, 'z')
+                .step(0.001)
+                .name('position.z')
+                .min(-10)
+                .max(10)
+            this.debugFolder.add(this.model.rotation, 'y')
+                .step(Math.PI / 180)
+                .name('rotation.y')
+                .min(-10)
+                .max(10)
+        }
+    }
+
+
+}
