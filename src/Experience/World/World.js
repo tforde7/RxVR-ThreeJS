@@ -3,6 +3,7 @@ import BrickWall from "./BrickWall";
 import Environment from "./Environment";
 import Floor from "./Floor";
 import Fox from "./Fox";
+import FrontDoor from "./FrontDoor";
 import GlassWall from "./GlassWall";
 
 export default class World {
@@ -17,8 +18,10 @@ export default class World {
             // Setup
             this.floor = new Floor()
             this.fox = new Fox()
+            
             this.brickWall = new BrickWall()
             this.glassWall = new GlassWall()
+            this.frontDoor = new FrontDoor()
             this.environment = new Environment()
 
 
