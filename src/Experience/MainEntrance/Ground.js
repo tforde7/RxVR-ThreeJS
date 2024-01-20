@@ -2,7 +2,7 @@ import Experience from "../Experience"
 import * as THREE from "three";
 
 
-export default class Floor {
+export default class Ground {
     constructor() {
         this.experience = new Experience
         this.scene = this.experience.scene

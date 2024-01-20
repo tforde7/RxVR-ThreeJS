@@ -3,7 +3,7 @@ import Sizes from "./Utils/Sizes"
 import Time from "./Utils/Time"
 import Camera from './Camera';
 import Renderer from './Renderer';
-import World from './World/World';
+import MainEntrance from './MainEntrance/MainEntrance';
 import Resources from './Utils/Resources';
 import sources from './sources';
 import Debug from './Utils/Debug';
@@ -34,7 +34,7 @@ export default class Experience {
         this.resources = new Resources(sources)
         this.camera = new Camera()
         this.renderer = new Renderer()
-        this.world = new World()
+        this.world = new MainEntrance()
 
 
         // Sizes resize event
