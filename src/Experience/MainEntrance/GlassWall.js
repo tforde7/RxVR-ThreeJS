@@ -11,7 +11,7 @@ export default class GlassWall {
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.debug.gui.addFolder('GlassWall')
+            this.debugFolder = this.experience.mainEntrance.debugFolder.addFolder('GlassWall')
         }
 
         this.setGeometry()

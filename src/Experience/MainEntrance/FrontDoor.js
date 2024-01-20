@@ -12,7 +12,8 @@ export default class FrontDoor {
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.debug.gui.addFolder('FrontDoor')
+            this.debugFolder = this.experience.mainEntrance.debugFolder.addFolder('FrontDoor')
+
         }
 
         // Setup

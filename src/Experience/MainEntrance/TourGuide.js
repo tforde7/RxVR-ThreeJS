@@ -12,7 +12,7 @@ export default class TourGuide {
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.debug.gui.addFolder('TourGuide')
+            this.debugFolder = this.experience.mainEntrance.debugFolder.addFolder('TourGuide')
         }
 
         // Setup

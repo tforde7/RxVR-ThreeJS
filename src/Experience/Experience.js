@@ -34,7 +34,7 @@ export default class Experience {
         this.resources = new Resources(sources)
         this.camera = new Camera()
         this.renderer = new Renderer()
-        this.world = new MainEntrance()
+        this.mainEntrance = new MainEntrance()
 
 
         // Sizes resize event
@@ -58,7 +58,7 @@ export default class Experience {
 
     update() {
         this.camera.update()
-        this.world.update()
+        this.mainEntrance.update()
         this.renderer.update()
     }
 

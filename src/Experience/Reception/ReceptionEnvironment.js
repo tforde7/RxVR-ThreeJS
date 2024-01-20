@@ -1,7 +1,7 @@
 import Experience from "../Experience";
 import * as THREE from "three";
 
-export default class Environment {
+export default class ReceptionEnvironment {
 
     constructor() {
         this.experience = new Experience()
@@ -11,7 +11,7 @@ export default class Environment {
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.debug.gui.addFolder('Environment')
+            this.debugFolder = this.debug.gui.addFolder('ReceptionEnvironment')
         }
 
         this.setSunlight()
@@ -86,7 +86,7 @@ export default class Environment {
                 .onChange(this.environmentMap.updateMaterial)
         }
 
-        
+
     }
 
     setRectAreaLight() {

@@ -11,7 +11,7 @@ export default class BrickWall {
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.debug.gui.addFolder('BrickWall')
+            this.debugFolder = this.experience.mainEntrance.debugFolder.addFolder('BrickWall')
         }
 
         this.setGeometry()

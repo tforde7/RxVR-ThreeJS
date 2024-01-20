@@ -1,6 +1,6 @@
 import Experience from "../Experience";
 import BrickWall from "./BrickWall";
-import MainEntranceEnvironment from "./MainEntranceEnvironment";
+import Environment from "./Environment";
 import Ground from "./Ground";
 // import Fox from "./Fox";
 import FrontDoor from "./FrontDoor";
@@ -13,32 +13,26 @@ export default class MainEntrance {
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
-        this.debug = this.experience.debug
-
-        // Debug
-        if (this.debug.active) {
-            this.debugFolder = this.debug.gui.addFolder('MainEntrance')
-        }
 
         // Resources ready event
         this.resources.on('ready', () => {
             // Setup
             this.floor = new Ground()
             // this.fox = new Fox()
-            
+
             this.brickWall = new BrickWall()
             this.glassWall = new GlassWall()
             this.frontDoor = new FrontDoor()
             this.tourGuide = new TourGuide()
-            this.environment = new MainEntranceEnvironment()
+            this.environment = new Environment()
 
 
         })
     }
 
     update() {
-        // if (this.fox) {
-        //     this.fox.update()
-        // }
+        if (this.fox) {
+            this.fox.update()
+        }
     }
 }
