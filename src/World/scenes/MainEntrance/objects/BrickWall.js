@@ -12,6 +12,7 @@ export default class BrickWall {
         // Debug
         if (this.debug.active) {
             this.debugFolder = this.world.mainEntrance.debugFolder.addFolder('BrickWall')
+            this.debugFolder.close()
         }
 
         this.setGeometry()

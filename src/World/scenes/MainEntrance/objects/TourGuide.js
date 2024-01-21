@@ -13,6 +13,7 @@ export default class TourGuide {
         // Debug
         if (this.debug.active) {
             this.debugFolder = this.world.mainEntrance.debugFolder.addFolder('TourGuide')
+            this.debugFolder.close()
         }
 
         // Setup

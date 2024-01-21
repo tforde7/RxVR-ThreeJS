@@ -20,6 +20,7 @@ export default class MainEntranceScene {
         // Debug
         if (this.debug.active) {
             this.debugFolder = this.debug.gui.addFolder('MainEntrance')
+            this.debugFolder.close()
         }
 
         // Resources ready event

@@ -13,6 +13,7 @@ export default class FrontDoor {
         // Debug
         if (this.debug.active) {
             this.debugFolder = this.world.mainEntrance.debugFolder.addFolder('FrontDoor')
+            this.debugFolder.close()
 
         }
 

@@ -9,6 +9,14 @@ export default class ReceptionScene {
         this.world = new World()
         this.scene = new THREE.Scene()
         this.resources = new Resources(receptionSources)
+        this.debug = this.world.debug
+
+
+        // Debug
+        if (this.debug.active) {
+            this.debugFolder = this.debug.gui.addFolder('Reception')
+            this.debugFolder.close()
+        }
 
         // Resources ready event
         this.resources.on('ready', () => {

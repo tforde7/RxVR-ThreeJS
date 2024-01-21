@@ -12,6 +12,7 @@ export default class MainEntranceEnvironment {
         // Debug
         if (this.debug.active) {
             this.debugFolder = this.world.mainEntrance.debugFolder.addFolder('Environment')
+            this.debugFolder.close()
         }
 
         this.setSunlight()
