@@ -6,8 +6,7 @@ export default class Camera {
     constructor() {
         this.world = new World()
         this.sizes = this.world.sizes
-        this.sizes = this.world.sizes
-        this.camvas = this.world.canvas
+        this.canvas = this.world.canvas
 
         this.setInstance()
         this.setOrbitControls()
@@ -25,7 +24,7 @@ export default class Camera {
     }
 
     setOrbitControls() {
-        this.controls = new OrbitControls(this.instance, this.camvas)
+        this.controls = new OrbitControls(this.instance, this.canvas)
         this.controls.enableDamping = true
 
     }

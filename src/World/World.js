@@ -13,7 +13,7 @@ export default class World {
 
     constructor(canvas) {
 
-        // Ensure Experience is a singleton
+        // Ensure World is a singleton
         if (instance) {
             return instance
         }
