@@ -1,13 +1,13 @@
-import Experience from "./Experience"
+import World from "./World"
 import * as THREE from "three";
 
 export default class Renderer {
 
     constructor() {
-        this.experience = new Experience()
+        this.experience = new World()
         this.sizes = this.experience.sizes
         this.time = this.experience.time
-        this.scene = this.experience.scene
+        this.mainEntranceScene = this.experience.mainEntrance.scene
         this.camera = this.experience.camera
 
         this.setInstance()
@@ -37,7 +37,7 @@ export default class Renderer {
     }
 
     update() {
-        this.instance.render(this.scene, this.camera.instance)
+        this.instance.render(this.mainEntranceScene, this.camera.instance)
 
     }
 }

@@ -1,11 +1,11 @@
-import Experience from "../Experience"
+import World from "../../../World"
 import * as THREE from "three";
 
 
 export default class TourGuide {
     constructor() {
-        this.experience = new Experience
-        this.scene = this.experience.scene
+        this.experience = new World()
+        this.scene = this.experience.mainEntrance.scene
         this.resources = this.experience.resources
         this.time = this.experience.time
         this.debug = this.experience.debug

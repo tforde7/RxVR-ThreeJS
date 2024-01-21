@@ -1,6 +1,6 @@
 import './styles.css'
-import Experience from './Experience/Experience'
+import World from './World/World'
 
 const canvas = document.querySelector('canvas.webgl')
-const experience = new Experience(canvas)
+const experience = new World(canvas)
 

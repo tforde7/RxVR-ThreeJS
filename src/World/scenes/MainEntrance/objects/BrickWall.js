@@ -1,17 +1,17 @@
-import Experience from "../Experience"
+import World from "../../../World"
 import * as THREE from "three";
 
-export default class GlassWall {
+export default class BrickWall {
 
     constructor() {
-        this.experience = new Experience()
-        this.scene = this.experience.scene
+        this.experience = new World()
+        this.scene = this.experience.mainEntrance.scene
         this.resources = this.experience.resources
         this.debug = this.experience.debug
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.experience.mainEntrance.debugFolder.addFolder('GlassWall')
+            this.debugFolder = this.experience.mainEntrance.debugFolder.addFolder('BrickWall')
         }
 
         this.setGeometry()
@@ -27,13 +27,13 @@ export default class GlassWall {
 
     setTextures() {
         this.textures = {}
-        this.textures.color = this.resources.items.glassColorTexture
+        this.textures.color = this.resources.items.brickColorTexture
         this.textures.color.colorSpace = THREE.SRGBColorSpace
         this.textures.color.repeat.set(3, 3)
         this.textures.color.wrapS = THREE.RepeatWrapping
         this.textures.color.wrapT = THREE.RepeatWrapping
 
-        this.textures.normal = this.resources.items.glassNormalTexture
+        this.textures.normal = this.resources.items.brickNormalTexture
         this.textures.normal.repeat.set(3, 3)
         this.textures.normal.wrapS = THREE.RepeatWrapping
         this.textures.normal.wrapT = THREE.RepeatWrapping
@@ -49,10 +49,10 @@ export default class GlassWall {
 
     setMesh() {
         this.mesh = new THREE.Mesh(this.geometry, this.material)
-        this.mesh.position.x = 0
-        this.mesh.position.z = -10
+        this.mesh.position.x = -10
+        this.mesh.position.z = 0
         this.mesh.position.y = 10
-        // this.mesh.rotation.y = Math.PI / 2
+        this.mesh.rotation.y = Math.PI / 2
         this.mesh.receiveShadow = true
         this.scene.add(this.mesh)
 
@@ -62,22 +62,22 @@ export default class GlassWall {
                 .step(0.001)
                 .min(-5)
                 .max(5)
-                .name('glassWallY')
+                .name('brickWallY')
             this.debugFolder.add(this.mesh.position, 'x')
                 .step(0.001)
                 .min(-5)
                 .max(5)
-                .name('glassWallX')
+                .name('brickWallX')
             this.debugFolder.add(this.mesh.position, 'z')
                 .step(0.001)
                 .min(-5)
                 .max(5)
-                .name('glassWallZ')
-            this.debugFolder.add(this.mesh.rotation, 'y')
-                .step(Math.PI * 0.0625)
-                .min(Math.PI * -2)
-                .max(Math.PI * 2)
-                .name('rotationY')
+                .name('brickWallZ')
+            // this.debugFolder.add(this.mesh.rotation, 'y')
+            //     .step(Math.PI * 0.0625)
+            //     .min(Math.PI * -2)
+            //     .max(Math.PI * 2)
+            //     .name('rotationY')
         }
     }
 }

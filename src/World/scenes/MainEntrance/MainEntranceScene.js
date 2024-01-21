@@ -1,19 +1,21 @@
-import Experience from "../Experience";
-import BrickWall from "./BrickWall";
+import World from "../../World";
+import BrickWall from "./objects/BrickWall";
 import MainEntranceEnvironment from "./MainEntranceEnvironment";
-import Ground from "./Ground";
-// import Fox from "./Fox";
-import FrontDoor from "./FrontDoor";
-import GlassWall from "./GlassWall";
-import TourGuide from "./TourGuide";
+import Ground from "./objects/Ground";
+import FrontDoor from "./objects/FrontDoor";
+import GlassWall from "./objects/GlassWall";
+import TourGuide from "./objects/TourGuide";
+import * as THREE from "three";
+import sources from "./_resources/mainEntranceSources";
+import Resources from "../../_utils/Resources";
 
-export default class MainEntrance {
+export default class MainEntranceScene {
 
     constructor() {
-        this.experience = new Experience()
-        this.scene = this.experience.scene
-        this.resources = this.experience.resources
-        this.debug = this.experience.debug
+        this.world = new World()
+        this.scene = new THREE.Scene()
+        this.resources = new Resources(sources)
+        this.debug = this.world.debug
 
         // Debug
         if (this.debug.active) {
@@ -23,9 +25,7 @@ export default class MainEntrance {
         // Resources ready event
         this.resources.on('ready', () => {
             // Setup
-            this.floor = new Ground()
-            // this.fox = new Fox()
-            
+            this.ground = new Ground()
             this.brickWall = new BrickWall()
             this.glassWall = new GlassWall()
             this.frontDoor = new FrontDoor()

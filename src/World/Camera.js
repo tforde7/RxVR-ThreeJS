@@ -1,10 +1,10 @@
-import Experience from "./Experience";
+import World from "./World";
 import { OrbitControls } from "three/addons/controls/OrbitControls";
 import * as THREE from "three";
 
 export default class Camera {
     constructor() {
-        this.experience = new Experience()
+        this.experience = new World()
         this.sizes = this.experience.sizes
         this.sizes = this.experience.sizes
         this.camvas = this.experience.canvas
