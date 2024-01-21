@@ -4,10 +4,10 @@ import * as THREE from "three";
 
 export default class Camera {
     constructor() {
-        this.experience = new World()
-        this.sizes = this.experience.sizes
-        this.sizes = this.experience.sizes
-        this.camvas = this.experience.canvas
+        this.world = new World()
+        this.sizes = this.world.sizes
+        this.sizes = this.world.sizes
+        this.camvas = this.world.canvas
 
         this.setInstance()
         this.setOrbitControls()
