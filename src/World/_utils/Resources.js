@@ -17,7 +17,12 @@ export default class Resources extends EventEmitter {
         this.loaded = 0
 
         this.setLoaders()
-        this.startLoading()
+        if (this.toLoad > 0) {
+            this.startLoading()
+        } else {
+            setTimeout(() => this.trigger("ready"), 500)
+            
+        }
 
     }
 

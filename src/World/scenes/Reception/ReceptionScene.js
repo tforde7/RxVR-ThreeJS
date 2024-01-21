@@ -2,6 +2,7 @@ import World from "../../World";
 import * as THREE from 'three'
 import Resources from "../../_utils/Resources";
 import receptionSources from "./_resources/receptionSources";
+import ReceptionBox from "./objects/ReceptionBox";
 
 export default class ReceptionScene {
 
@@ -12,17 +13,16 @@ export default class ReceptionScene {
         this.debug = this.world.debug
 
 
+
         // Debug
         if (this.debug.active) {
             this.debugFolder = this.debug.gui.addFolder('Reception')
             this.debugFolder.close()
         }
 
-        // Resources ready event
         this.resources.on('ready', () => {
-            // Setup
-
-
+            console.log('reception ready')
         })
+
     }
 }

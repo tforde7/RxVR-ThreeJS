@@ -14,47 +14,47 @@ export default class ReceptionEnvironment {
             this.debugFolder = this.debug.gui.addFolder('ReceptionEnvironment')
         }
 
-        // this.setSunlight()
+        this.setSunlight()
         // this.setEnvironmentMap()
         // this.setRectAreaLight()
     }
 
-    // setSunlight() {
-    //     this.sunlight = new THREE.DirectionalLight(0xffffff, 3)
-    //     this.sunlight.castShadow = true
-    //     this.sunlight.shadow.mapSize.set(1024, 1024)
-    //     this.sunlight.shadow.camera.far = 15
-    //     this.sunlight.shadow.normalBias = 0.05
-    //     this.sunlight.position.set(3, 3, 3)
-    //     this.scene.add(this.sunlight)
-    //
-    //     // Debug
-    //     if (this.debug.active) {
-    //         this.debugFolder.add(this.sunlight, 'intensity')
-    //             .step(0.001)
-    //             .min(0)
-    //             .max(10)
-    //             .name('sunlightIntensity')
-    //
-    //         this.debugFolder.add(this.sunlight.position, 'x')
-    //             .step(0.001)
-    //             .min(-5)
-    //             .max(5)
-    //             .name('sunlightX')
-    //
-    //         this.debugFolder.add(this.sunlight.position, 'y')
-    //             .step(0.001)
-    //             .min(-5)
-    //             .max(5)
-    //             .name('sunlightY')
-    //         this.debugFolder.add(this.sunlight.position, 'z')
-    //             .step(0.001)
-    //             .min(-5)
-    //             .max(5)
-    //             .name('sunlightZ')
-    //     }
-    //
-    // }
+    setSunlight() {
+        this.sunlight = new THREE.DirectionalLight(0xffffff, 3)
+        this.sunlight.castShadow = true
+        this.sunlight.shadow.mapSize.set(1024, 1024)
+        this.sunlight.shadow.camera.far = 15
+        this.sunlight.shadow.normalBias = 0.05
+        this.sunlight.position.set(3, 3, 3)
+        this.scene.add(this.sunlight)
+
+        // Debug
+        if (this.debug.active) {
+            this.debugFolder.add(this.sunlight, 'intensity')
+                .step(0.001)
+                .min(0)
+                .max(10)
+                .name('sunlightIntensity')
+
+            this.debugFolder.add(this.sunlight.position, 'x')
+                .step(0.001)
+                .min(-5)
+                .max(5)
+                .name('sunlightX')
+
+            this.debugFolder.add(this.sunlight.position, 'y')
+                .step(0.001)
+                .min(-5)
+                .max(5)
+                .name('sunlightY')
+            this.debugFolder.add(this.sunlight.position, 'z')
+                .step(0.001)
+                .min(-5)
+                .max(5)
+                .name('sunlightZ')
+        }
+
+    }
     //
     // setEnvironmentMap() {
     //     this.environmentMap = {}

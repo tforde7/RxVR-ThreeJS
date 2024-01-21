@@ -30,7 +30,7 @@ export default class World {
         this.sizes = new Sizes()
         this.time = new Time()
         this.camera = new Camera()
-        this.mainEntrance = new MainEntranceScene()
+        // this.mainEntrance = new MainEntranceScene()
         this.reception = new ReceptionScene()
         this.renderer = new Renderer()
 
@@ -57,7 +57,7 @@ export default class World {
 
     update() {
         this.camera.update()
-        this.mainEntrance.update()
+        // this.mainEntrance.update()
         this.renderer.update()
     }
 
@@ -66,17 +66,17 @@ export default class World {
         this.time.off('tick')
 
         // Traverse through all the objects in the scene and dispose of all meshes
-        this.mainEntrance.scene.traverse((child) => {
-            if (child instanceof THREE.Mesh) {
-                child.geometry.dispose()
-                for (const key in child.material) {
-                    const value = child.material[key]
-                    if (value && typeof value.dispose === 'function') {
-                        value.dispose()
-                    }
-                }
-            }
-        })
+        // this.mainEntrance.scene.traverse((child) => {
+        //     if (child instanceof THREE.Mesh) {
+        //         child.geometry.dispose()
+        //         for (const key in child.material) {
+        //             const value = child.material[key]
+        //             if (value && typeof value.dispose === 'function') {
+        //                 value.dispose()
+        //             }
+        //         }
+        //     }
+        // })
 
         this.renderer.instance.dispose()
         this.camera.controls.dispose()

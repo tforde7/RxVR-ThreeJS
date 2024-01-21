@@ -7,7 +7,7 @@ export default class Renderer {
         this.world = new World()
         this.sizes = this.world.sizes
         this.time = this.world.time
-        this.mainEntranceScene = this.world.mainEntrance.scene
+        // this.mainEntranceScene = this.world.mainEntrance.scene
         this.receptionScene = this.world.reception.scene
         this.camera = this.world.camera
 
@@ -38,7 +38,7 @@ export default class Renderer {
     }
 
     update() {
-        this.instance.render(this.mainEntranceScene, this.camera.instance)
+        // this.instance.render(this.mainEntranceScene, this.camera.instance)
         this.instance.render(this.receptionScene, this.camera.instance)
 
     }
