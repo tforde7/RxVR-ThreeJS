@@ -4,15 +4,15 @@ import * as THREE from "three";
 
 export default class FrontDoor {
     constructor() {
-        this.experience = new World
-        this.scene = this.experience.mainEntrance.scene
-        this.resources = this.experience.resources
-        this.time = this.experience.time
-        this.debug = this.experience.debug
+        this.world = new World()
+        this.scene = this.world.mainEntrance.scene
+        this.resources = this.world.mainEntrance.resources
+        this.time = this.world.time
+        this.debug = this.world.debug
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.experience.mainEntrance.debugFolder.addFolder('FrontDoor')
+            this.debugFolder = this.world.mainEntrance.debugFolder.addFolder('FrontDoor')
 
         }
 

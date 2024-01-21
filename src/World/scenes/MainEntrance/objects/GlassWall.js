@@ -4,14 +4,14 @@ import * as THREE from "three";
 export default class GlassWall {
 
     constructor() {
-        this.experience = new World()
-        this.scene = this.experience.mainEntrance.scene
-        this.resources = this.experience.resources
-        this.debug = this.experience.debug
+        this.world = new World()
+        this.scene = this.world.mainEntrance.scene
+        this.resources = this.world.mainEntrance.resources
+        this.debug = this.world.debug
 
         // Debug
         if (this.debug.active) {
-            this.debugFolder = this.experience.mainEntrance.debugFolder.addFolder('GlassWall')
+            this.debugFolder = this.world.mainEntrance.debugFolder.addFolder('GlassWall')
         }
 
         this.setGeometry()

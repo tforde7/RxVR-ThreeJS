@@ -4,8 +4,6 @@ import Time from "./_utils/Time"
 import Camera from './Camera';
 import Renderer from './Renderer';
 import MainEntranceScene from './scenes/MainEntrance/MainEntranceScene';
-import Resources from './_utils/Resources';
-import sources from './scenes/MainEntrance/_resources/mainEntranceSources';
 import Debug from './_utils/Debug';
 import ReceptionScene from "./scenes/Reception/ReceptionScene";
 
@@ -31,7 +29,6 @@ export default class World {
         this.debug = new Debug()
         this.sizes = new Sizes()
         this.time = new Time()
-        this.resources = new Resources(sources)
         this.camera = new Camera()
         this.mainEntrance = new MainEntranceScene()
         this.reception = new ReceptionScene()
